@@ -1,0 +1,34 @@
+<!-- <div id="custom-overlay" [style.display]="splash ? 'flex': 'none'">
+  <div class="flb">
+    <div class="Aligner-item Aligner-item--top"></div>
+    <img src="../assets/imgs/logo6.png" >
+    <div class="Aligner-item Aligner-item--bottom"></div>
+  </div>
+</div> -->
+
+<ion-content class="bk" padding>
+
+
+
+    <ion-slides class="texto" pager>
+
+      <ion-slide class="imagem" >
+
+        <h2>Seja bem vindo ao GloAtivos</h2>
+        <h5>o GloAtivos é um aplicativo desenvolvido com o intuito de auxiliar o esteticísta na hora aplicar os produtos em seus clientes.</h5>
+        <button top ion-button color="dark" (click)="openLogin()">Pular</button>
+      </ion-slide>
+
+      <ion-slide class="acess">
+        <h2>Acessibilidade</h2>
+        <h5>O GloAtivos conta um grande catálogo de Ativos, com ele você consegue encontrar qualquer ativos e saber qual a sua area de ultilização.</h5>
+        <button top ion-button  color="dark" (click)="openLogin()">Pular</button>
+      </ion-slide>
+
+      <ion-slide class="agree">
+        <h2> Vamos la!</h2>
+        <h5>Realize seu login para ter acesso a tudo isso na palma da sua mão.</h5>
+        <button ion-button  color="dark" (click)="openLogin()">Fazer login</button>
+      </ion-slide>
+    </ion-slides>
+  </ion-content>

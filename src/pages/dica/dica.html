@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar color="rosa">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Deixe aqui a sua dica</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card *ngFor="let dica of dicas | async">
+
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="../assets/imgs/avatar.jpg">
+        </ion-avatar>
+        <h2>{{dica.usuario}}</h2>
+        <p>{{dica.data | date:'dd/MM/yyyy'}}</p>
+      </ion-item>
+      <ion-card-content>
+        <p>{{dica.dicaUser}}</p>
+      </ion-card-content>
+      <ion-card-content>
+          <p>Moderar:{{dica.moderar}}</p>
+        </ion-card-content>
+
+      <ion-row>
+        <ion-col>
+          <button ion-button icon-start clear small (click)="editDicas(dica)">
+            <ion-icon name="create"></ion-icon>
+            <div>Editar</div>
+          </button>
+        </ion-col>
+          <ion-col>
+            <button ion-button icon-start clear small (click)="removeDicas(dica.key)">
+              <ion-icon name="trash"></ion-icon>
+              <div>Excluir</div>
+            </button>
+          </ion-col>
+      </ion-row>
+
+  </ion-card>
+
+    <ion-fab right bottom>
+      <button ion-fab color="primary" (click)="newItemDicas()"><ion-icon name="add"></ion-icon></button>
+    </ion-fab>
+</ion-content>

@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-navbar color="rosa">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Dicas</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<form [formGroup]="form">
+  <ion-item>
+    <ion-label stacked>Deixe aqui a sua dica</ion-label>
+    <ion-input type="text" formControlName="dicaUser"></ion-input>
+  </ion-item>
+  <ion-item>
+      <ion-label stacked>moderar</ion-label>
+      <ion-input type="text" formControlName="moderar"></ion-input>
+    </ion-item>
+
+  <ion-item>
+    <div padding>
+      <button ion-button block color="rosa" type="submit" (click)="onSubmit()">Salvar</button>
+    </div>
+  </ion-item>
+</form>
+</ion-content>
+

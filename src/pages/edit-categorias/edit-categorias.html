@@ -1,0 +1,49 @@
+<ion-header>
+  <ion-navbar color="rosa">
+      <ion-buttons end>
+
+      </ion-buttons>
+    <ion-title>{{title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+<form [formGroup]="form">
+  <ion-item>
+    <ion-label stacked> Nome do ativo</ion-label>
+    <ion-input type="text" formControlName="nome"></ion-input>
+  </ion-item>
+  <ion-item *ngIf="!form.controls.nome.valid && (form.controls.nome.dirty || form.controls.nome.touched)" color="danger">
+    <div [hidden]="!form.controls.nome.errors.required">
+    o campo é obrigatorio
+    </div>
+  </ion-item>
+
+  <ion-item>
+    <ion-label stacked> Principais funções</ion-label>
+    <ion-input type="text" formControlName="descricao"></ion-input>
+  </ion-item>
+  <ion-item *ngIf="!form.controls.descricao.valid && (form.controls.descricao.dirty || form.controls.descricao.touched)" color="danger">
+    <div [hidden]="!form.controls.descricao.errors.required">
+    o campo é obrigatorio
+    </div>
+  </ion-item>
+
+  <ion-item>
+      <ion-label stacked> Origem do ativo</ion-label>
+      <ion-input type="text" formControlName="origem"></ion-input>
+    </ion-item>
+    <ion-item *ngIf="!form.controls.origem.valid && (form.controls.origem.dirty || form.controls.origem.touched)" color="danger">
+      <div [hidden]="!form.controls.origem.errors.required">
+      o campo é obrigatorio
+      </div>
+    </ion-item>
+
+  <ion-item>
+    <div padding>
+      <button ion-button block color="rosa" type="submit" (click)="onSubmit()"[disabled]="!form.valid">Salvar</button>
+    </div>
+  </ion-item>
+</form>
+</ion-content>
+

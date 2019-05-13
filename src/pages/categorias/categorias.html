@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar color="rosa">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title *ngIf="!isSearchbarOpened">
+      Ativos
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<!-- click="descricao()" -->
+<ion-content padding>
+
+  <ion-list>
+
+    <ion-item-sliding *ngFor="let categoria of categorias | async">
+      <ion-item>
+        <!-- <h3>{{categoria.name}}</h3> -->
+        <h3 (click)="listCategorias(categoria)" >{{categoria.nome}}</h3>
+      </ion-item>
+      <ion-item-options side="left">
+        <button ion-button color="secundary" (click)="editCategorias(categoria)"><ion-icon name="create"></ion-icon></button>
+      </ion-item-options>
+      <ion-item-options side="right">
+        <button ion-button color="danger" (click)="removeCategorias(categoria.key)"><ion-icon name="trash"></ion-icon></button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+  <ion-fab right bottom>
+    <button ion-fab color="primary" (click)="newItemCategorias()"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+</ion-content>
+
